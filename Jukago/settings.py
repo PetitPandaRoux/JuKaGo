@@ -25,7 +25,7 @@ SECRET_KEY = 'g_o2!2@9o*-ixj(sna!j$ocv(%7$z@ow7fu$r_x(egaz2@r#-k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -76,10 +76,23 @@ WSGI_APPLICATION = 'Jukago.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'jukago'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db_jukago',
+	'USER': 'jukago',
+	'PASSWORD': 'Jukago@1',
+ 	'HOST': 'localhost',
+	'PORT': '',
     }
 }
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.path.join(BASE_DIR, 'jukago'),
+#    }
+#}
+
 
 
 # Password validation
