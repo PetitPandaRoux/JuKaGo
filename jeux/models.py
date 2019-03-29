@@ -25,6 +25,8 @@ class Regle(models.Model):
 
 
 class Jeu(models.Model):
+    class Meta:
+        verbose_name_plural = 'jeux'
     titre = models.CharField(max_length=255)
     type_jeu = models.CharField(max_length=255)
     description = models.TextField()
